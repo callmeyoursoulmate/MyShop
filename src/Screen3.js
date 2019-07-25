@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Dimensions, Text, ScrollView, StatusBar } from 'react-native';
+import {Actions} from 'react-native-router-flux';
+
+import { View, Image, StyleSheet, Dimensions, Text, StatusBar, TouchableOpacity } from 'react-native';
 const { width, height } = Dimensions.get('window');
-import Icon from 'react-native-vector-icons/Ionicons';
 import IconAwesome from 'react-native-vector-icons/FontAwesome';
 
 class Screen3 extends Component {
@@ -24,10 +25,10 @@ class Screen3 extends Component {
                     {/* end body1*/}
 
                     <View style={{flexDirection:'row',marginTop:50}}>
-                        <View style={{flexDirection:'column',left:20,height:130, width:130,backgroundColor:'white'}}>
+                        <TouchableOpacity onPress={this.onProfile.bind(this)} style={{flexDirection:'column',left:20,height:130, width:130,backgroundColor:'white'}}>
                             <IconAwesome name={"user"} color={"rgb(229,211,74)"} size={60} style={{marginLeft:40,marginTop:20}} />
                             <Text style={{marginLeft:40,marginTop:10}}>Profile</Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={{flexDirection:'column',left:80,height:130, width:130,backgroundColor:'white'}}>
                             <IconAwesome name={"search"} color={"rgb(229,211,74)"} size={60} style={{marginLeft:40,marginTop:20}} />
                             <Text style={{marginLeft:45,marginTop:10}}>Search</Text>
@@ -63,6 +64,9 @@ class Screen3 extends Component {
                 </View>
             </View>
         )
+    }
+    onProfile(){
+        Actions.Profile();
     }
 }
 

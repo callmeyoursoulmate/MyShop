@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
 import { View, Image, StyleSheet, Dimensions, Text, ScrollView, TouchableOpacity } from 'react-native';
 const { width, height } = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -14,7 +15,7 @@ class Screen2 extends Component {
                         source={require('./image/c.jpg')}
                     />
                     <View style={{ flexDirection: 'row', marginLeft: 5, alignItems: 'center', bottom: 190 }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={this.onBack.bind(this)}>
                             <IconAwesome name={"arrow-left"} color={"white"} size={18} />
                         </TouchableOpacity>
                         <TouchableOpacity>
@@ -185,6 +186,9 @@ class Screen2 extends Component {
 
             </View>
         )
+    }
+    onBack(){
+        Actions.pop();
     }
 };
 

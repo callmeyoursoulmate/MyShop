@@ -14,7 +14,6 @@ const {width, height} = Dimensions.get ('window');
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconAwesome from 'react-native-vector-icons/FontAwesome';
 
-//placeholderTextColor
 
 class Screen5 extends Component {
   constructor (props) {
@@ -50,13 +49,13 @@ class Screen5 extends Component {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={[styles.viewButton, {width: 70}]} onPress={() => {this.setState ({curLine: 'offers'});}}>
-                <Text style={styles.textTop}>Offers</Text>
-                {curLine == 'offers' ? <View style={[styles.lineButton, {width: 46}]}/> : null}
+                    <Text style={styles.textTop}>Offers</Text>
+                    {curLine == 'offers' ? <View style={[styles.lineButton, {width: 46}]}/> : null}
                 </TouchableOpacity>
 
                 <TouchableOpacity style={[styles.viewButton, {width: 80}]} onPress={() => {this.setState ({curLine: 'previous'});}}>
-                <Text style={styles.textTop}>Previous</Text>
-                {curLine == 'previous' ? <View style={[styles.lineButton, {width: 52}]}/> : null}
+                    <Text style={styles.textTop}>Previous</Text>
+                    {curLine == 'previous' ? <View style={[styles.lineButton, {width: 52}]}/> : null}
                 </TouchableOpacity>
           </View>
         </View>
